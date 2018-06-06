@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="create_contact_confirmed">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Contact enregistré</t>
+            <h1>Contact Enregistré</h1>
+            <div style="width:100%; align:center;">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.name"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.email"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.phone"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.street"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.city"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.country_id.name"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <t t-esc="lead_id.name"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="existing_contact">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Détails Contact</t>
+            <h1>
+                <t t-esc="lead_id.name"/>
+            </h1>
+            <div style="width:100%; align:center;">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.name"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.email"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.phone"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.street"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.city"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <t t-esc="partner_id.country_id.name"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="good_morning">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Good morning</t>
+            <h1>Good morning</h1>
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/GB2yiIoEtXw"
+                    frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        </t>
+    </template>
+
+    <template id="contact_info">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Enregistrer Contact</t>
+            <h1>Enregistrer un contact</h1>
+            <div style="width:100%; align:center;">
+                <form t-attf-action="/contact_info/create_contact" method="post">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control"
+                                    id="contact_name" name="contact_name"
+                                    placeholder="Nom" required="1"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control"
+                                   id="contact_street" name="contact_street"
+                                   placeholder="Adresse" required="1"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control"
+                                   id="contact_city" name="contact_city"
+                                   placeholder="Ville" required="1"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <select id="contact_country" name="contact_country"
+                                    class="form-control" required="1">
+                                <option value="" selected="1"></option>
+                                <t t-foreach="contact_country_ids"
+                                    t-as="contact_country">
+                                    <option t-att-value="contact_country.id">
+                                        <t t-esc="contact_country.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control"
+                                   id="contact_phone" name="contact_phone"
+                                   placeholder="Numéro de Téléphone"
+                                   required="1"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control"
+                                   id="contact_email" name="contact_email"
+                                   placeholder="Email" required="1"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control"
+                                   id="lead_name" name="lead_name"
+                                   placeholder="Lead Name"
+                                   required="1"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <button type="submit" class="btn btn-primary" name="button_submit">Enregistrer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+</odoo>
