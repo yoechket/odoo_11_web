@@ -1,0 +1,31 @@
+<odoo>
+    <data noupdate="0">
+        <record model="printing_wizard.design" id="design_1">
+            <field name="name">1</field>
+        </record>
+        <record model="printing_wizard.design" id="design_2">
+            <field name="name">2</field>
+        </record>
+        <record model="printing_wizard.design" id="design_3">
+            <field name="name">3</field>
+        </record>
+        <record model="printing_wizard.trykk" id="trykk_1">
+            <field name="name">Xerox iGen 36_4x66</field>
+        </record>
+        <record model="printing_wizard.trykk" id="trykk_2">
+            <field name="name">Ricoh iGen 36_4x66</field>
+        </record>
+
+        <record model="printing_wizard.ferdig1" id="ferdig1_1">
+            <field name="name">MBQ 76 Falsemaskin</field>
+            <field name="trykk" ref="trykk_1"/>
+        </record>
+
+        <record model="printing_wizard.ferdig1" id="ferdig1_2">
+            <field name="name">MBQ 1112376 Falsemaskin</field>
+            <field name="trykk" ref="trykk_2"/>
+        </record>
+
+    </data>
+</odoo>
+

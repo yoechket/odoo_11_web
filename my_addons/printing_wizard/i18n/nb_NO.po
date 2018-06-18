@@ -1,0 +1,523 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* printing_wizard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0-20170420\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-26 18:09+0000\n"
+"PO-Revision-Date: 2017-06-26 20:14+0200\n"
+"Last-Translator: Torvald Baade Bringsvor <bringsvor@bringsvor.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nb_NO\n"
+"X-Generator: Poedit 1.8.5\n"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,sider:0
+#: selection:printing_wizard.printing_wizard,sider:0
+msgid "1+0"
+msgstr "1+0"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,sider:0
+#: selection:printing_wizard.printing_wizard,sider:0
+msgid "1+1"
+msgstr "1+1"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,sider:0
+#: selection:printing_wizard.printing_wizard,sider:0
+msgid "4+0"
+msgstr "4+0"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,sider:0
+#: selection:printing_wizard.printing_wizard,sider:0
+msgid "4+1"
+msgstr "4+1"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,sider:0
+#: selection:printing_wizard.printing_wizard,sider:0
+msgid "4+4"
+msgstr "4+4"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_antall
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_antall
+msgid "Antall"
+msgstr "Antall"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_klikk_ratio
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_klikk_ratio
+msgid "Antall trykk pr råformat"
+msgstr "Antall trykk pr råformat"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "Back"
+msgstr "Tilbake"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_width
+msgid "Bredde"
+msgstr "Bredde"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_configuration
+msgid "Configuration"
+msgstr "Konfigurasjon"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_configuration_name
+msgid "Configuration name"
+msgstr "Konfigurasjonsnavn"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_create_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_create_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_create_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_create_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_create_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_create_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_create_uid
+msgid "Created by"
+msgstr "Opprettet av"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_create_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_create_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_create_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_create_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_create_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_create_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_create_date
+msgid "Created on"
+msgstr "Opprettet den"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_design
+msgid "Design"
+msgstr "Design"
+
+#. module: printing_wizard
+#: selection:printing_wizard.machine,maskintype:0
+msgid "Digitaltrykk Ark"
+msgstr "Digitaltrykk Ark"
+
+#. module: printing_wizard
+#: selection:printing_wizard.machine,maskintype:0
+msgid "Digitaltrykk Rull"
+msgstr "Digitaltrykk Rull"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_display_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_display_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_display_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_display_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_display_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_display_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_display_name
+msgid "Display Name"
+msgstr "Visnings navn"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_sider
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_sider
+msgid "Farger"
+msgstr "Farger"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_ferdiggjoring
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_ferdiggjoring
+#: selection:printing_wizard.machine,maskintype:0
+msgid "Ferdiggjøring"
+msgstr "Ferdiggjøring"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_name
+msgid "Ferdiggjøring 1"
+msgstr "Ferdiggjøring 1"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_wizard,state:0
+msgid "First"
+msgstr "Første"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_name
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_storleik
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_storleik
+msgid "Format"
+msgstr "Format"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_format_advice
+msgid "Formatforslag"
+msgstr "Formatforslag"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_filter
+msgid "Formats"
+msgstr "Formater"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_product_product_height
+#: model:ir.model.fields,field_description:printing_wizard.field_product_template_height
+msgid "Height"
+msgstr "Høyde"
+
+#. module: printing_wizard
+#: model:ir.model.fields,help:printing_wizard.field_product_product_height
+#: model:ir.model.fields,help:printing_wizard.field_product_template_height
+msgid "Height of media in mm"
+msgstr "Høyde på media i mm"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_height
+msgid "Høyde"
+msgstr "Høyde"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_id
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_id
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_id
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_id
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_id
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_id
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_id
+msgid "ID"
+msgstr "ID"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_filter
+#: selection:printing_wizard.paper_format,kind:0
+msgid "Input"
+msgstr "Inn"
+
+#. module: printing_wizard
+#: model:ir.actions.act_window,name:printing_wizard.input_paperformat_action
+#: model:ir.ui.menu,name:printing_wizard.menu_paperformat_input_action
+msgid "Input Paper formats"
+msgstr "Råpapir format"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_storleik_inn
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_storleik_inn
+msgid "Input format"
+msgstr "Råpapir format"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_input_form
+msgid "Input paper format"
+msgstr "Råpapir format"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_kind
+msgid "Kind"
+msgstr "Vennlig"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design___last_update
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1___last_update
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine___last_update
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format___last_update
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg___last_update
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard___last_update
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk___last_update
+msgid "Last Modified on"
+msgstr "Sist oppdatert "
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_write_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_write_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_write_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_write_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_write_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_write_uid
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_write_uid
+msgid "Last Updated by"
+msgstr "Sist oppdatert av"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_design_write_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_write_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_write_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_write_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_write_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_write_date
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_write_date
+msgid "Last Updated on"
+msgstr "Sist oppdatert"
+
+#. module: printing_wizard
+#: model:ir.model.fields,help:printing_wizard.field_printing_wizard_printing_wizard_configuration
+msgid "Leave open to create new"
+msgstr "La stå åpen for å lage ny"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,direction:0
+#: selection:printing_wizard.printing_wizard,direction:0
+msgid "Liggende"
+msgstr "Liggende"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "Load"
+msgstr "Hente"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_wizard,state:0
+msgid "Loading"
+msgstr "Laster"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_maskintype
+msgid "Makintype"
+msgstr "Makintype"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_paper_format_machine
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_maskin
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_maskin
+msgid "Maskin"
+msgstr "Maskin"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_name
+msgid "Maskinnavn"
+msgstr "Maskinnavn"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_max_width
+msgid "Max bredde"
+msgstr "Max bredde"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_max_height
+msgid "Max høyde"
+msgstr "Max høyde"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_medie
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_medie
+msgid "Medie"
+msgstr "Medie"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "Next"
+msgstr "Neste"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_order
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_order
+msgid "Ordre"
+msgstr "Ordre"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_filter
+#: selection:printing_wizard.paper_format,kind:0
+msgid "Output"
+msgstr "Ferdig"
+
+#. module: printing_wizard
+#: model:ir.actions.act_window,name:printing_wizard.output_paperformat_action
+#: model:ir.ui.menu,name:printing_wizard.menu_paperformat_output_action
+msgid "Output Paper formats"
+msgstr "Ferdigprodukt papirformat"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_output_form
+msgid "Output paper format"
+msgstr "Ferdigprodukt papirformat"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_input_tree
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_output_tree
+msgid "Paperformat"
+msgstr "Papirformat"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_filter
+msgid "Paperformats for feeding into the press"
+msgstr "Papirformater for å mate i trykkpresse"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_filter
+msgid "Paperformats for finished product"
+msgstr "Papirformat for det ferdige produkt"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_plater
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_plater
+msgid "Plater"
+msgstr "Plater"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_product_product
+msgid "Product"
+msgstr "Produkt"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_product_template
+msgid "Product Template"
+msgstr "Produktmal"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_direction
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_direction
+msgid "Retning"
+msgstr "Retning"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_running_product
+msgid "Running product"
+msgstr "Løpende produkt"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_sale_order
+msgid "Sales Order"
+msgstr "Salgsordre"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "Save"
+msgstr "Lagre"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_wizard,state:0
+msgid "Saving"
+msgstr "Lagrer"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_wizard,state:0
+msgid "Second"
+msgstr "Andre"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_input_tree
+#: model:ir.ui.view,arch_db:printing_wizard.view_paperformat_output_tree
+msgid "Short Name"
+msgstr "Kortnavn"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_ant_sider
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_ant_sider
+msgid "Sider"
+msgstr "Sider"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_machine_startup_product
+msgid "Startup product"
+msgstr "Oppstartsprodukt"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_state
+msgid "State"
+msgstr "Stat"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_config_status
+msgid "Status"
+msgstr "Status"
+
+#. module: printing_wizard
+#: selection:printing_wizard.printing_cfg,direction:0
+#: selection:printing_wizard.printing_wizard,direction:0
+msgid "Stående"
+msgstr "Stående"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_cfg_svinn
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_svinn
+msgid "Svinn"
+msgstr "Svinn"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_ferdig1_ftrykk
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_printing_wizard_trykk
+#: model:ir.model.fields,field_description:printing_wizard.field_printing_wizard_trykk_name
+#: selection:printing_wizard.machine,maskintype:0
+msgid "Trykk"
+msgstr "Trykk"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_order_form
+msgid "Trykksak"
+msgstr "Trykksak"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "Trykksak Konfigurator"
+msgstr "Trykksak Konfigurator"
+
+#. module: printing_wizard
+#: model:ir.model.fields,field_description:printing_wizard.field_product_product_width
+#: model:ir.model.fields,field_description:printing_wizard.field_product_template_width
+msgid "Width"
+msgstr "Bredde"
+
+#. module: printing_wizard
+#: model:ir.model.fields,help:printing_wizard.field_product_product_width
+#: model:ir.model.fields,help:printing_wizard.field_product_template_width
+msgid "Width of media in mm"
+msgstr "Bredde på media i mm"
+
+#. module: printing_wizard
+#: model:ir.ui.view,arch_db:printing_wizard.view_printing_wizard
+msgid "or"
+msgstr "eller"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_design
+msgid "printing_wizard.design"
+msgstr "printing_wizard.design"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_ferdig1
+msgid "printing_wizard.ferdig1"
+msgstr "printing_wizard.ferdig1"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_machine
+msgid "printing_wizard.machine"
+msgstr "printing_wizard.machine"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_output_format
+msgid "printing_wizard.output_format"
+msgstr "printing_wizard.output_format"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_paper_format
+msgid "printing_wizard.paper_format"
+msgstr "printing_wizard.paper_format"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_printing_cfg
+msgid "printing_wizard.printing_cfg"
+msgstr "printing_wizard.printing_cfg"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_printing_wizard
+msgid "printing_wizard.printing_wizard"
+msgstr "printing_wizard.printing_wizard"
+
+#. module: printing_wizard
+#: model:ir.model,name:printing_wizard.model_printing_wizard_trykk
+msgid "printing_wizard.trykk"
+msgstr "printing_wizard.trykk"
