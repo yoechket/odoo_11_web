@@ -6,5 +6,7 @@
 
     'summary': "Sandbox for frontend forms",
 
+    'depends': ['website'],
+
     'data': ['views/templates.xml'],
 }
