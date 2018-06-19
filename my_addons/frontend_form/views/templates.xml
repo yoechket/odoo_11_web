@@ -40,9 +40,10 @@
     <template id="existing_contact">
         <t t-call="website.layout">
             <t t-set="additional_title">Détails Contact</t>
-            <h1>
+            <h1>Contact Existe Déja</h1>
+            <h2>
                 <t t-esc="lead_id.name"/>
-            </h1>
+            </h2>
             <div style="width:100%; align:center;">
                 <div class="form-row">
                     <div class="form-group col-md-4">
