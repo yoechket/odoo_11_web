@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <template id="create_contact_confirmed">
+    <template id="contact_created">
         <t t-call="website.layout">
             <t t-set="additional_title">Contact enregistré</t>
             <h1>Contact Enregistré</h1>
@@ -70,7 +70,7 @@
         </t>
     </template>
 
-    <template id="good_morning">
+    <template id="good_morning_page_template">
         <t t-call="website.layout">
             <t t-set="additional_title">Good morning</t>
             <h1>Good morning</h1>
@@ -80,34 +80,48 @@
         </t>
     </template>
 
-    <template id="contact_info">
+    <record id="good_morning_page" model="website.page">
+        <field name="name">Good Morning page</field>
+        <field name="website_published">True</field>
+        <field name="url">/good_morning</field>
+        <field name="view_id" ref="good_morning_page_template"/>
+    </record>
+
+    <record id="good_morning_page_link" model="website.menu">
+        <field name="name">Good Morning</field>
+        <field name="page_id" ref="good_morning_page"/>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">50</field>
+    </record>
+
+    <template id="add_contact">
         <t t-call="website.layout">
-            <t t-set="additional_title">Enregistrer Contact</t>
-            <h1>Enregistrer un contact</h1>
+            <t t-set="additional_title">Add Contact</t>
+            <h1>Add contact</h1>
             <div style="width:100%; align:center;">
-                <form t-attf-action="/contact_info/create_contact" method="post">
+                <form t-attf-action="/add_contact/create_contact" method="post">
                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <input type="text" class="form-control"
                                     id="contact_name" name="contact_name"
-                                    placeholder="Nom" required="1"/>
+                                    placeholder="Name" required="1" alt="Name"/>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control"
                                    id="contact_street" name="contact_street"
-                                   placeholder="Adresse" required="1"/>
+                                   placeholder="Address" required="1"/>
                         </div>
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control"
                                    id="contact_city" name="contact_city"
-                                   placeholder="Ville" required="1"/>
+                                   placeholder="City" required="1"/>
                         </div>
                         <div class="form-group col-md-4">
                             <select id="contact_country" name="contact_country"
-                                    class="form-control" required="1">
+                                    class="form-control" required="1" placeholder="Country">
                                 <option value="" selected="1"></option>
                                 <t t-foreach="contact_country_ids"
                                     t-as="contact_country">
@@ -122,7 +136,7 @@
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control"
                                    id="contact_phone" name="contact_phone"
-                                   placeholder="Numéro de Téléphone"
+                                   placeholder="Phone Number"
                                    required="1"/>
                         </div>
                         <div class="form-group col-md-6">
@@ -141,12 +155,45 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <button type="submit" class="btn btn-primary" name="button_submit">Enregistrer</button>
+                            <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
                         </div>
                     </div>
                 </form>
             </div>
         </t>
+    </template>
+
+    <record id="add_contact_page" model="website.page">
+        <field name="name">Add Contact page</field>
+        <field name="website_published">True</field>
+        <field name="url">/add_contact</field>
+        <field name="view_id" ref="add_contact"/>
+    </record>
+
+    <record id="add_contact_page_link" model="website.menu">
+        <field name="name">Add Contact</field>
+        <field name="page_id" ref="add_contact_page"/>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">40</field>
+    </record>
+
+    <template id="mystyle" name="My style" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link href="/frontend_form/static/less/header.less" rel="stylesheet" type="text/less"/>
+        </xpath>
+    </template>
+
+    <template id="homepage_extension"
+              inherit_id="website.homepage"
+              name="CGE Homepage Extension">
+        <xpath expr="//div[@id='wrap']" position="attributes">
+            <attribute name="class">oe_structure</attribute>
+        </xpath>
+        <xpath expr="//div[@id='wrap']" position="inside">
+             <iframe src="http://www.odoo.com/fr"
+                style="width:100%;
+                        height:900px;"></iframe>
+        </xpath>
     </template>
 
 </odoo>

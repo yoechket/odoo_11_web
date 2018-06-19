@@ -4,16 +4,16 @@ from odoo.http import request
 
 
 class Contact(http.Controller):
-    @http.route("/contact_info", type="http", auth="user", website=True)
-    def contact_info(self):
+    @http.route("/add_contact", type="http", auth="user", website=True)
+    def add_contact(self):
         contact_country_ids = request.env['res.country'].sudo().search([])
-        return request.render('frontend_form.contact_info', {'contact_country_ids': contact_country_ids})
+        return request.render('frontend_form.add_contact', {'contact_country_ids': contact_country_ids})
 
     @http.route("/good_morning", type="http", auth="public", website=True)
     def good_morning(self):
-        return request.render('frontend_form.good_morning', {})
+        return request.render('frontend_form.good_morning_page_template', {})
 
-    @http.route("/contact_info/create_contact",
+    @http.route("/add_contact/create_contact",
                 type="http", auth="user",
                 website=True, method="post")
     def create_contact(self, contact_name,
@@ -44,7 +44,7 @@ class Contact(http.Controller):
                 lead_id = request.env['crm.lead'].sudo().create({'partner_id': partner_id.id,
                                                                  'name': lead_name})
                 return request.render(
-                    'frontend_form.create_contact_confirmed',
+                    'frontend_form.contact_created',
                     {'partner_id': partner_id,
                      'lead_id': lead_id})
         elif partner_ids:
