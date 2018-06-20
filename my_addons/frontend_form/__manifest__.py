@@ -8,5 +8,7 @@
 
     'depends': ['website'],
 
-    'data': ['views/templates.xml'],
+    'data': ['views/add_contact_templates.xml',
+             'views/home_page.xml',
+             'views/assets.xml'],
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="homepage_extension"
+              inherit_id="website.homepage"
+              name="CGE Homepage Extension">
+            <xpath expr="//div[@id='wrap']" position="attributes">
+                <attribute name="class">oe_structure</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

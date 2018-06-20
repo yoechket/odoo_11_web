@@ -9,10 +9,6 @@ class Contact(http.Controller):
         contact_country_ids = request.env['res.country'].sudo().search([])
         return request.render('frontend_form.add_contact', {'contact_country_ids': contact_country_ids})
 
-    @http.route("/good_morning", type="http", auth="public", website=True)
-    def good_morning(self):
-        return request.render('frontend_form.good_morning_page_template', {})
-
     @http.route("/add_contact/create_contact",
                 type="http", auth="user",
                 website=True, method="post")
