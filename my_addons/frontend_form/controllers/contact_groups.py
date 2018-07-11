@@ -12,5 +12,6 @@ class contact_group(http.Controller):
             Group = request.env['res.partner.group'].sudo().search([('id', '=', group_id), ('access_token', '=', token)])
             group_sudo = Group.sudo()
             values = {'group': group_sudo,
-                      'token': token}
+                      'token': token,
+                      'action': request.env.ref('frontend_form.action_view_partner_groups').id}
             return request.render('frontend_form.contact_group', values)

@@ -7,6 +7,7 @@
                 <body>
                     <h1>
                         <t t-raw="group.name"/>
+                        <a class="btn btn-info" t-att-href="'/web#return_label=Website&amp;model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (group._name, group.id, action)">Back</a>
                     </h1>
                     <t t-foreach="group.partner_ids" t-as="partner">
                         <span t-field="partner.name"/>
