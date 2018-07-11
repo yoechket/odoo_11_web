@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <template id="contact_group" name="Contact group">
+            <t t-call="portal.portal_layout">
+                <t t-set="additional_title">Contact Group</t>
+                <body>
+                    <h1>
+                        <t t-raw="group.name"/>
+                    </h1>
+                    <t t-foreach="group.partner_ids" t-as="partner">
+                        <span t-field="partner.name"/>
+                        <t t-if="partner.street">
+                            - <span t-field="partner.street"/>
+                        </t>
+                        <t t-if="partner.city">
+                            - <span t-field="partner.city"/>
+                        </t>
+                        <t t-if="partner.country_id">
+                        - <span t-field="partner.country_id.name"/>
+                        </t>
+                        <t t-if="partner.phone">
+                        - <span t-field="partner.phone"/>
+                        </t>
+                        <t t-if="partner.email">
+                        - <span t-field="partner.email"/>
+                        </t>
+                        <br/>
+                    </t>
+                </body>
+            </t>
+        </template>
+
+</odoo>

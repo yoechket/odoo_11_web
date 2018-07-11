@@ -13,7 +13,7 @@
     font-decoration:underline!important;
 }
 
-.dropdown-menu{
+.navbar .navbar-collapse .dropdown-menu{
     background-color:#7c7bad;
 }
 
@@ -24,4 +24,28 @@
 
 .dropdown-menu li a:hover{
     color:black!important;
+}
+
+.o_mail_navbar_dropdown_top, .o_mail_navbar_dropdown_channels{
+    background-color:white!important;
+}
+
+.settings_tab{
+    background-color:#7c7bad!important;
+}
+
+.app_name{
+    color:white!important;
+}
+
+.o_mail_chat_sidebar, .o_tooltip_parent{
+    background-color:#7c7bad!important;
+}
+
+.o_mail_sidebar_title h4 b{
+    color:white!important;
+}
+
+.o_add{
+    color:white!important;
 }

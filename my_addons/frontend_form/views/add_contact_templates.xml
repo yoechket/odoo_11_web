@@ -48,8 +48,6 @@
                 <t t-esc="lead_id.name"/>
             </h2>
             <div style="width:100%; align:center;">
-                <script>
-                </script>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <t t-esc="partner_id.name"/>

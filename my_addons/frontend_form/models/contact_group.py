@@ -10,7 +10,16 @@ class contactGroup(models.Model):
     partner_ids = fields.One2many('res.partner', 'group_id', string='Contacts')
 
     def _get_default_access_token(self):
-        uid = uuid.uuid4()
+        uid = str(uuid.uuid4())
         return uid
 
     access_token = fields.Char(string='Security Token', default=_get_default_access_token, copy=False)
+
+    @api.multi
+    def preview_group(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'self',
+            'url': '/group/%s/%s' % (self.id, self.access_token)
+        }
