@@ -4,9 +4,10 @@
 
         <template id="homepage_extension"
               inherit_id="website.homepage"
-              name="CGE Homepage Extension">
-            <xpath expr="//div[@id='wrap']" position="attributes">
-                <attribute name="class">oe_structure</attribute>
+              name="Homepage Extension">
+            <xpath expr="//div[@id='wrap']" position="inside">
+                <h1>Test</h1>
+                <button id="toggle">Toggle text</button>
             </xpath>
         </template>
 

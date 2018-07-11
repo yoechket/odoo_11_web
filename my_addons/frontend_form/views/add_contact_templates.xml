@@ -2,10 +2,13 @@
 <odoo>
 
     <template id="contact_created">
-        <t t-call="website.layout">
+        <t t-call="portal.portal_layout">
             <t t-set="additional_title">Contact enregistré</t>
             <h1>Contact Enregistré</h1>
             <div style="width:100%; align:center;">
+                <script>
+                    alert("Contact Created")
+                </script>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <t t-esc="partner_id.name"/>
@@ -45,6 +48,8 @@
                 <t t-esc="lead_id.name"/>
             </h2>
             <div style="width:100%; align:center;">
+                <script>
+                </script>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <t t-esc="partner_id.name"/>
@@ -64,7 +69,9 @@
                         <t t-esc="partner_id.city"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <t t-esc="partner_id.country_id.name"/>
+                        <a href="#" onMouseOver="alert('Hello World')">
+                            <t t-esc="partner_id.country_id.name"/>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -72,71 +79,65 @@
     </template>
 
     <template id="add_contact">
-        <t t-call="website.layout">
+        <t t-call="portal.portal_layout">
             <t t-set="additional_title">Add Contact</t>
-            <h1>Add contact</h1>
-            <div style="width:100%; align:center;">
-                <form t-attf-action="/add_contact/create_contact" method="post">
-                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control"
+            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalform">
+                <i class="fa fa-address-card"></i> Show Contact Form
+            </a>
+            <div class="modal fade" id="modalform" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form t-attf-action="/add_contact/create_contact" method="POST" id="contact_form" class="modal-content">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
+                            <h3 class="modal-title">Add contact</h3>
+                        </div>
+                        <div class="modal-body container">
+                            <b>Name: </b><input type="text" class="form-control"
                                     id="contact_name" name="contact_name"
-                                    placeholder="Name" required="1" alt="Name"/>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <input type="text" class="form-control"
+                                    placeholder="Contact Name" required="1" alt="Name"/>
+                            <br/>
+                            <b>Address: </b><input type="text" class="form-control"
                                    id="contact_street" name="contact_street"
-                                   placeholder="Address" required="1"/>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="text" class="form-control"
+                                   placeholder="Contact Address" required="1"/>
+                            <br/>
+                            <b>City: </b><input type="text" class="form-control"
                                    id="contact_city" name="contact_city"
-                                   placeholder="City" required="1"/>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <select id="contact_country" name="contact_country"
-                                    class="form-control" required="1" placeholder="Country">
+                                   placeholder="Contact City" required="1"/>
+                            <br/>
+                            <b>Country: </b><select id="contact_country" name="contact_country"
+                                    class="form-control" required="1" placeholder="Contact Country">
                                 <option value="" selected="1"></option>
-                                <t t-foreach="contact_country_ids"
-                                    t-as="contact_country">
-                                    <option t-att-value="contact_country.id">
-                                        <t t-esc="contact_country.name"/>
+                                    <t t-foreach="contact_country_ids"
+                                        t-as="contact_country">
+                                        <option t-att-value="contact_country.id">
+                                            <t t-esc="contact_country.name"/>
                                     </option>
                                 </t>
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control"
+                            <br/>
+                            <b>Phone number: </b><input type="text" class="form-control"
                                    id="contact_phone" name="contact_phone"
-                                   placeholder="Phone Number"
+                                   placeholder="Contact Phone Number"
                                    required="1"/>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control"
+                            <br/>
+                            <b>Email: </b><input type="text" class="form-control"
                                    id="contact_email" name="contact_email"
-                                   placeholder="Email" required="1"/>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control"
+                                   placeholder="Contact Email" required="1"/>
+                            <br/>
+                            <b>Lead Name: </b><input type="text" class="form-control"
                                    id="lead_name" name="lead_name"
                                    placeholder="Lead Name"
                                    required="1"/>
+                            <br/>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
+                <!--<button id="toggleForm">Show Form</button>-->
         </t>
     </template>
 

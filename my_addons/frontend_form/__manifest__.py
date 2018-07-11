@@ -6,9 +6,11 @@
 
     'summary': "Sandbox for frontend forms",
 
-    'depends': ['website'],
+    'depends': ['website', 'contacts'],
 
     'data': ['views/add_contact_templates.xml',
              'views/home_page.xml',
-             'views/assets.xml'],
+             'views/assets.xml',
+             'views/contact_extension.xml'
+             ],
 }

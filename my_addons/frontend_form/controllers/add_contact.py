@@ -44,9 +44,10 @@ class Contact(http.Controller):
                     {'partner_id': partner_id,
                      'lead_id': lead_id})
         elif partner_ids:
-            partner_id = request.env['res.partner'].sudo().search([
+            partner_ids = request.env['res.partner'].sudo().search([
                 ('name', '=', contact_name)
             ])
+            partner_id = partner_ids[0]
             lead_ids = request.env['crm.lead'].sudo().search([
                 ('name', '=', lead_name)
             ])
@@ -59,4 +60,4 @@ class Contact(http.Controller):
                 )
             elif not lead_ids:
                 lead_id = request.env['crm.lead'].sudo().create({'partner_id': partner_id.id,
-                                                             'name': lead_name})
+                                                                 'name': lead_name})
