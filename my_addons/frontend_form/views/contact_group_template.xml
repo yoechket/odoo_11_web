@@ -1,34 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+        <template id="dummy" name="Dummy Template">
+            <t t-call="website.layout">
+                <t t-set="additional_title">Dummy Page</t>
+                <body>
+                    <div class="col-md-offset-6">
+                        <strong>Dummy</strong><br/>
+                    </div>
+                </body>
+            </t>
+        </template>
+
         <template id="contact_group" name="Contact group">
             <t t-call="portal.portal_layout">
                 <t t-set="additional_title">Contact Group</t>
-                <body>
-                    <h1>
-                        <t t-raw="group.name"/>
-                        <a class="btn btn-info" t-att-href="'/web#return_label=Website&amp;model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (group._name, group.id, action)">Back</a>
-                    </h1>
-                    <t t-foreach="group.partner_ids" t-as="partner">
-                        <span t-field="partner.name"/>
-                        <t t-if="partner.street">
-                            - <span t-field="partner.street"/>
+                <div id="wrap">
+                    <div class="row" style="align:center;">
+                        <div class="col-md-3">
+                            <h1>
+                                <t t-raw="group.name"/>
+                            </h1>
+                        </div>
+                        <div class="col-md-3 col-md-offset-6">
+                            <a class="btn btn-info" t-att-href="'/web#return_label=Website&amp;model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (group._name, group.id, action)">Back</a>
+                        </div>
+                    </div>
+                    <table class="table table-stripped">
+                        <tr>
+                            <th>
+                                <strong>Name</strong>
+                            </th>
+                            <th>
+                                <strong>Address</strong>
+                            </th>
+                            <th>
+                                <strong>City</strong>
+                            </th>
+                            <th>
+                                <strong>Country</strong>
+                            </th>
+                            <th>
+                                <strong>Phone Number</strong>
+                            </th>
+                            <th>
+                                <strong>Email</strong>
+                            </th>
+                            <th></th>
+                        </tr>
+                        <t t-foreach="group.partner_ids" t-as="contact">
+                            <tr>
+                                <td>
+                                    <span t-field="contact.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="contact.street"/>
+                                </td>
+                                <td>
+                                    <span t-field="contact.city"/>
+                                </td>
+                                <td>
+                                    <span t-field="contact.country_id.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="contact.phone"/>
+                                </td>
+                                <td>
+                                    <span t-field="contact.email"/>
+                                </td>
+                                <td>
+                                    <a t-attf-href="/group/unlink_contact/#{contact.id}/#{group.id}/#{group.access_token}" class="mb8">
+                                        <span class="fa fa-minus"/>
+                                    </a>
+                                </td>
+                            </tr>
                         </t>
-                        <t t-if="partner.city">
-                            - <span t-field="partner.city"/>
-                        </t>
-                        <t t-if="partner.country_id">
-                        - <span t-field="partner.country_id.name"/>
-                        </t>
-                        <t t-if="partner.phone">
-                        - <span t-field="partner.phone"/>
-                        </t>
-                        <t t-if="partner.email">
-                        - <span t-field="partner.email"/>
-                        </t>
-                        <br/>
-                    </t>
-                </body>
+                    </table>
+                    <div class="row">
+                        <a class="btn btn-primary btn-block hidden-print" data-toggle="modal" data-target="#modalform">
+                            <i class="fa fa-address-card"></i> New Contact
+                        </a>
+                        <div class="modal fade" id="modalform" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <form t-attf-action="/contact_group/create_contact" method="POST" id="new_contact_form" class="modal-content">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
+                                        <h3 class="modal-title">Add contact to group</h3>
+                                    </div>
+                                    <div class="modal-body container">
+                                        <b>Name: </b><input type="text" class="form-control"
+                                                id="contact_name" name="contact_name"
+                                                placeholder="Contact Name" required="1" alt="Name"/>
+                                        <br/>
+                                        <b>Address: </b><input type="text" class="form-control"
+                                               id="contact_street" name="contact_street"
+                                               placeholder="Contact Address" required="1"/>
+                                        <br/>
+                                        <b>City: </b><input type="text" class="form-control"
+                                               id="contact_city" name="contact_city"
+                                               placeholder="Contact City" required="1"/>
+                                        <br/>
+                                        <b>Country: </b><select id="contact_country" name="contact_country"
+                                                class="form-control" required="1" placeholder="Contact Country">
+                                            <option value="" selected="1"></option>
+                                                <t t-foreach="contact_country_ids"
+                                                    t-as="contact_country">
+                                                    <option t-att-value="contact_country.id">
+                                                        <t t-esc="contact_country.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                        <br/>
+                                        <b>Phone number: </b><input type="text" class="form-control"
+                                               id="contact_phone" name="contact_phone"
+                                               placeholder="Contact Phone Number"
+                                               required="1"/>
+                                        <br/>
+                                        <b>Email: </b><input type="text" class="form-control"
+                                               id="contact_email" name="contact_email"
+                                               placeholder="Contact Email" required="1"/>
+                                        <br/>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h1>Or Select From Existing</h1>
+                        </div>
+                        <table class="table table-stripped">
+                            <tr>
+                                <th>
+                                    <strong>Name</strong>
+                                </th>
+                                <th>
+                                    <strong>Address</strong>
+                                </th>
+                                <th>
+                                    <strong>City</strong>
+                                </th>
+                                <th>
+                                    <strong>Country</strong>
+                                </th>
+                                <th>
+                                    <strong>Phone Number</strong>
+                                </th>
+                                <th>
+                                    <strong>Email</strong>
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                            <t t-foreach="contacts" t-as="contact">
+                                <tr>
+                                    <td>
+                                        <span t-field="contact.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="contact.street"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="contact.city"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="contact.country_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="contact.phone"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="contact.email"/>
+                                    </td>
+                                    <td>
+                                        <a t-attf-href="/group/add_contact/#{contact.id}/#{group.id}/#{group.access_token}" class="mb8" style="text-align:right;">
+                                            <span class="fa fa-plus"/>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </div>
             </t>
         </template>
 

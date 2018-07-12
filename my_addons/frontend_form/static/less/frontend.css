@@ -2,3 +2,7 @@
     background-color:white;
     border:none;
 }
+
+.col-md-1, .col-md-2{
+    word-wrap:break-word;
+}

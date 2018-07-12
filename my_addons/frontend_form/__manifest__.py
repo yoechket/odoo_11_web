@@ -8,7 +8,8 @@
 
     'depends': ['website', 'contacts'],
 
-    'data': ['views/add_contact_templates.xml',
+    'data': ['security/ir.model.access.csv',
+             'views/add_contact_templates.xml',
              'views/home_page.xml',
              'views/assets.xml',
              'views/contact_extension.xml',

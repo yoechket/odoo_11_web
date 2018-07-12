@@ -8,8 +8,8 @@
 }
 
 .navbar .navbar-collapse ul li a:hover{
+    background-color:#7c7bad!important;
     color:black!important;
-    background-color:white!important;
     font-decoration:underline!important;
 }
 
