@@ -6,3 +6,10 @@
 .col-md-1, .col-md-2{
     word-wrap:break-word;
 }
+
+.bs-sidebar{
+  z-index : 1;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+  position:fixed;
+}

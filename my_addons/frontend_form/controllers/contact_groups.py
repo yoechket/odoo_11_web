@@ -7,8 +7,10 @@ import werkzeug
 class contact_group(http.Controller):
 
     @http.route("/group/<int:group_id>/<token>", type='http', auth='user', website=True)
-    def view_group(self, group_id, token=None, **post):
+    def view_group(self, group_id, token=None, pdf=None, **post):
         if token:
+            if pdf:
+                return request.render('frontend_form.dummy')
             self.contact_country_ids = request.env['res.country'].sudo().search([])
             Group = request.env['res.partner.group'].sudo().search([('id', '=', group_id), ('access_token', '=', token)])
             self.group_sudo = Group.sudo()
