@@ -6,7 +6,7 @@ import uuid
 class contactGroup(models.Model):
     _name = 'res.partner.group'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', required=True)
     partner_ids = fields.One2many('res.partner', 'group_id', string='Contacts')
 
     def _get_default_access_token(self):
