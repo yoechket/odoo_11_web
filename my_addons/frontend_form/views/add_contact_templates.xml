@@ -67,9 +67,7 @@
                         <t t-esc="partner_id.city"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <a href="#" onMouseOver="alert('Hello World')">
-                            <t t-esc="partner_id.country_id.name"/>
-                        </a>
+                        <t t-esc="partner_id.country_id.name"/>
                     </div>
                 </div>
             </div>

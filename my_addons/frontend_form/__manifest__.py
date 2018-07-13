@@ -6,9 +6,19 @@
 
     'summary': "Sandbox for frontend forms",
 
-    'depends': ['website', 'contacts'],
+    'depends': ['website',
+                'contacts',
+                'smile_menu_icon_10',
+                'calendar',
+                'crm',
+                'sale_management',
+                'account_invoicing',
+                'point_of_sale',
+                'stock'],
 
-    'data': ['security/ir.model.access.csv',
+    'data': ['data/menu_icons.xml',
+             'report/contact_group_report.xml',
+             'security/ir.model.access.csv',
              'views/add_contact_templates.xml',
              'views/home_page.xml',
              'views/assets.xml',
