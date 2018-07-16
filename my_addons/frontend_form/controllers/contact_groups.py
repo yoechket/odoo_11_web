@@ -58,3 +58,13 @@ class contact_group(http.Controller):
         partner = request.env['res.partner'].sudo().search([('id', '=', partner_id)])
         partner.write({'group_id': False})
         return werkzeug.utils.redirect("/group/%s/%s" % (group_id, token))
+
+    @http.route(['/group/update_rank'], type='json', auth="user", website=True)
+    def update(self, increase=False, group_id=None, token=None, **post):
+        Group = request.env['res.partner.group'].sudo().browse(int(group_id))
+        if token != Group.access_token:
+            return request.render('website.404')
+        number = -1 if increase else 1
+        new_rank = Group.rank + number
+        Group.write({'rank': new_rank})
+        return [str(new_rank)]

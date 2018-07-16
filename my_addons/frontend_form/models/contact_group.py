@@ -8,6 +8,7 @@ class contactGroup(models.Model):
 
     name = fields.Char(string='Name', required=True)
     partner_ids = fields.One2many('res.partner', 'group_id', string='Contacts')
+    rank = fields.Integer(string='Rank')
 
     def _get_default_access_token(self):
         uid = str(uuid.uuid4())

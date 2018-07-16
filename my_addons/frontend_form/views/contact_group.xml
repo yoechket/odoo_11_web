@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="rank"/>
                     <field name="partner_ids" widget="many2many_tags"/>
                 </tree>
             </field>
@@ -22,9 +23,14 @@
                         <button name="preview_group" string="Preview" type="object"/>
                     </header>
                     <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1"/>
+                            </h1>
+                        </div>
                         <group>
                             <group>
-                                <field name="name"/>
+                                <field name="rank"/>
                                 <field name="access_token" invisible="True"/>
                             </group>
                         </group>
