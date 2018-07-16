@@ -3,38 +3,47 @@
 
     <template id="contact_created">
         <t t-call="portal.portal_layout">
-            <t t-set="additional_title">Contact enregistré</t>
+            <t t-set="additional_title">Contact Enregistré</t>
             <h1>Contact Enregistré</h1>
-            <div style="width:100%; align:center;">
-                <script>
-                    alert("Contact Created")
-                </script>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.name"/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h2>
+                                    <t t-esc="partner_id.name"/>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>Email:</b>
+                                <t t-esc="partner_id.email"/>
+                            </div>
+                            <div class="col-md-6">
+                                <b>Phone:</b>
+                                <t t-esc="partner_id.phone"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>Address:</b>
+                                <t t-esc="partner_id.street"/>
+                            </div>
+                            <div class="col-md-6">
+                                <b>City:</b>
+                                <t t-esc="partner_id.city"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b>Country:</b>
+                                <t t-esc="partner_id.country_id.name"/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.email"/>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.phone"/>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.street"/>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.city"/>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.country_id.name"/>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <t t-esc="lead_id.name"/>
-                    </div>
+                    <div class="col-md-3"></div>
                 </div>
             </div>
         </t>
@@ -43,32 +52,46 @@
     <template id="existing_contact">
         <t t-call="website.layout">
             <t t-set="additional_title">Détails Contact</t>
-            <h1>Contact Existe Déja</h1>
-            <h2>
-                <t t-esc="lead_id.name"/>
-            </h2>
-            <div style="width:100%; align:center;">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.name"/>
+            <h1>Contact Existant</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h2>
+                                    <t t-esc="partner_id.name"/>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>Email:</b>
+                                <t t-esc="partner_id.email"/>
+                            </div>
+                            <div class="col-md-6">
+                                <b>Phone:</b>
+                                <t t-esc="partner_id.phone"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>Address:</b>
+                                <t t-esc="partner_id.street"/>
+                            </div>
+                            <div class="col-md-6">
+                                <b>City:</b>
+                                <t t-esc="partner_id.city"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b>Country:</b>
+                                <t t-esc="partner_id.country_id.name"/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.email"/>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.phone"/>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.street"/>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.city"/>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <t t-esc="partner_id.country_id.name"/>
-                    </div>
+                    <div class="col-md-3"></div>
                 </div>
             </div>
         </t>
@@ -77,55 +100,142 @@
     <template id="add_contact">
         <t t-call="portal.portal_layout">
             <t t-set="additional_title">Add Contact</t>
-            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalform">
-                <i class="fa fa-address-card"></i> Show Contact Form
-            </a>
+            <div class="container">
+                <form t-attf-action="/add_contact/create_contact" method="POST" id="standard_contact_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <ul class="dialog-list">
+                                <li>
+                                    <b>Name: </b><input type="text" class="form-control"
+                                    id="contact_name" name="contact_name"
+                                    placeholder="Contact Name" required="1" alt="Name"/>
+                                </li>
+                                <li>
+                                    <b>Address: </b><input type="text" class="form-control"
+                                    id="contact_street" name="contact_street"
+                                    placeholder="Contact Address" required="1"/>
+                                </li>
+                                <li>
+                                    <b>City: </b><input type="text" class="form-control"
+                                    id="contact_city" name="contact_city"
+                                    placeholder="Contact City" required="1"/>
+                                </li>
+                                <li>
+                                    <b>Country: </b><select id="contact_country" name="contact_country"
+                                            class="form-control" required="1" placeholder="Contact Country">
+                                        <option value="" selected="1"></option>
+                                            <t t-foreach="contact_country_ids"
+                                                t-as="contact_country">
+                                                <option t-att-value="contact_country.id">
+                                                    <t t-esc="contact_country.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </li>
+                                <li>
+                                    <b>Phone number: </b><input type="text" class="form-control"
+                                           id="contact_phone" name="contact_phone"
+                                           placeholder="Contact Phone Number"
+                                           required="1"/>
+                                </li>
+                                <li>
+                                    <b>Email: </b><input type="text" class="form-control"
+                                           id="contact_email" name="contact_email"
+                                           placeholder="Contact Email" required="1"/>
+                                </li>
+                                <li>
+                                    <b>Lead Name: </b><input type="text" class="form-control"
+                                        id="lead_name" name="lead_name"
+                                        placeholder="Lead Name"
+                                        required="1"/>
+                                </li>
+                                <li>
+                                    <br/>
+                                    <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </form>
+            </div>
+                <!--<button id="toggleForm">Show Form</button>-->
+        </t>
+    </template>
+
+    <template id="add_contact_modal"
+              inherit_id="frontend_form.add_contact"
+              customize_show="True"
+              name="Pop-up Form">
+        <xpath expr="//div[@class='container']" position="replace">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <a class="btn btn-block" data-toggle="modal" data-target="#modalform">
+                            <i class="fa fa-address-card"></i> Add Contact
+                        </a>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
             <div class="modal fade" id="modalform" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
-                    <form t-attf-action="/add_contact/create_contact" method="POST" id="contact_form" class="modal-content">
+                    <form t-attf-action="/add_contact/create_contact_modal" method="POST" id="modal_contact_form" class="modal-content">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
                             <h3 class="modal-title">Add contact</h3>
                         </div>
                         <div class="modal-body container">
-                            <b>Name: </b><input type="text" class="form-control"
+                            <ul class="dialog-list">
+                                <li>
+                                    <b>Name: </b><input type="text" class="form-control"
                                     id="contact_name" name="contact_name"
                                     placeholder="Contact Name" required="1" alt="Name"/>
-                            <br/>
-                            <b>Address: </b><input type="text" class="form-control"
-                                   id="contact_street" name="contact_street"
-                                   placeholder="Contact Address" required="1"/>
-                            <br/>
-                            <b>City: </b><input type="text" class="form-control"
-                                   id="contact_city" name="contact_city"
-                                   placeholder="Contact City" required="1"/>
-                            <br/>
-                            <b>Country: </b><select id="contact_country" name="contact_country"
-                                    class="form-control" required="1" placeholder="Contact Country">
-                                <option value="" selected="1"></option>
-                                    <t t-foreach="contact_country_ids"
-                                        t-as="contact_country">
-                                        <option t-att-value="contact_country.id">
-                                            <t t-esc="contact_country.name"/>
-                                    </option>
-                                </t>
-                            </select>
-                            <br/>
-                            <b>Phone number: </b><input type="text" class="form-control"
-                                   id="contact_phone" name="contact_phone"
-                                   placeholder="Contact Phone Number"
-                                   required="1"/>
-                            <br/>
-                            <b>Email: </b><input type="text" class="form-control"
-                                   id="contact_email" name="contact_email"
-                                   placeholder="Contact Email" required="1"/>
-                            <br/>
-                            <b>Lead Name: </b><input type="text" class="form-control"
-                                   id="lead_name" name="lead_name"
-                                   placeholder="Lead Name"
-                                   required="1"/>
-                            <br/>
+                                </li>
+                                <li>
+                                    <b>Address: </b><input type="text" class="form-control"
+                                    id="contact_street" name="contact_street"
+                                    placeholder="Contact Address" required="1"/>
+                                </li>
+                                <li>
+                                    <b>City: </b><input type="text" class="form-control"
+                                    id="contact_city" name="contact_city"
+                                    placeholder="Contact City" required="1"/>
+                                </li>
+                                <li>
+                                    <b>Country: </b><select id="contact_country" name="contact_country"
+                                            class="form-control" required="1" placeholder="Contact Country">
+                                        <option value="" selected="1"></option>
+                                            <t t-foreach="contact_country_ids"
+                                                t-as="contact_country">
+                                                <option t-att-value="contact_country.id">
+                                                    <t t-esc="contact_country.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </li>
+                                <li>
+                                    <b>Phone number: </b><input type="text" class="form-control"
+                                           id="contact_phone" name="contact_phone"
+                                           placeholder="Contact Phone Number"
+                                           required="1"/>
+                                </li>
+                                <li>
+                                    <b>Email: </b><input type="text" class="form-control"
+                                           id="contact_email" name="contact_email"
+                                           placeholder="Contact Email" required="1"/>
+                                </li>
+                                <li>
+                                    <b>Lead Name: </b><input type="text" class="form-control"
+                                        id="lead_name" name="lead_name"
+                                        placeholder="Lead Name"
+                                        required="1"/>
+                                </li>
+                            </ul>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
                             </div>
@@ -133,8 +243,7 @@
                     </form>
                 </div>
             </div>
-                <!--<button id="toggleForm">Show Form</button>-->
-        </t>
+        </xpath>
     </template>
 
     <record id="add_contact_page" model="website.page">
