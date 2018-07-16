@@ -64,7 +64,12 @@ class contact_group(http.Controller):
         Group = request.env['res.partner.group'].sudo().browse(int(group_id))
         if token != Group.access_token:
             return request.render('website.404')
-        number = -1 if increase else 1
+        if increase and Group.rank > 1:
+            number = -1
+        elif increase and Group.rank == 1:
+            number = 0
+        elif not increase:
+            number = 1
         new_rank = Group.rank + number
         Group.write({'rank': new_rank})
         return [str(new_rank)]

@@ -236,13 +236,13 @@
             <strong>Rank: </strong>
             <div class="input-group oe_website_spinner">
                 <span class="input-group-addon hidden-print">
-                    <a t-attf-href="./update_rank/?group_id=#{ group.id }&amp;increase=True&amp;token=#{ group.access_token }" class="mb8 js_update_rank_json">
+                    <a t-attf-href="./update_rank/?group_id=#{ group.id }&amp;token=#{ group.access_token }" class="mb8 js_update_rank_json">
                         <span class="fa fa-minus"/>
                     </a>
                 </span>
                 <input type="text" class="js_rank form-control" t-att-data-id="group.id" t-att-value="group.rank"/>
                 <span class="input-group-addon hidden-print">
-                    <a t-attf-href="./update_rank/?group_id=#{ group.id }&amp;token=#{ group.access_token }" class="mb8 js_update_rank_json">
+                    <a t-attf-href="./update_rank/?group_id=#{ group.id }&amp;increase=True&amp;token=#{ group.access_token }" class="mb8 js_update_rank_json">
                         <span class="fa fa-plus"/>
                     </a>
                 </span>
