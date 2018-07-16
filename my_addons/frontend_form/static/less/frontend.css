@@ -17,3 +17,8 @@
 #menu_title:hover{
     background-color:transparent;
 }
+
+.dialog-list{
+    list-style-type:none;
+    margin-right:35px;
+}

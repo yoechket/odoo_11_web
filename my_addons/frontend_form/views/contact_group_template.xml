@@ -12,7 +12,7 @@
         </t>
     </template>
 
-    <template id="sidebar_menu">
+    <template id="sidebar_menu" name="Sidebar Menu">
         <div class="bs-sidebar">
             <div class="navspy">
                 <ul class="nav bs-sidenav" data-id="group_sidebar" id="side_menu">
@@ -24,7 +24,7 @@
     <template id="sidebar_menu_extended"
                 customize_show="True" active="True"
                 inherit_id="frontend_form.sidebar_menu"
-                name="Sidebar Menu">
+                name="Full Sidebar Menu">
         <xpath expr="//div[@class='bs-sidebar']/div[@class='navspy']/ul" position="inside">
             <li>
                 <a style="color:black;" id="menu_title">
@@ -125,38 +125,46 @@
                             <h3 class="modal-title">Add contact to group</h3>
                         </div>
                         <div class="modal-body container">
-                            <b>Name: </b><input type="text" class="form-control"
+                            <ul class="dialog-list">
+                                <li>
+                                    <b>Name: </b><input type="text" class="form-control"
                                     id="contact_name" name="contact_name"
                                     placeholder="Contact Name" required="1" alt="Name"/>
-                            <br/>
-                            <b>Address: </b><input type="text" class="form-control"
-                                   id="contact_street" name="contact_street"
-                                   placeholder="Contact Address" required="1"/>
-                            <br/>
-                            <b>City: </b><input type="text" class="form-control"
-                                   id="contact_city" name="contact_city"
-                                   placeholder="Contact City" required="1"/>
-                            <br/>
-                            <b>Country: </b><select id="contact_country" name="contact_country"
-                                    class="form-control" required="1" placeholder="Contact Country">
-                                <option value="" selected="1"></option>
-                                    <t t-foreach="contact_country_ids"
-                                        t-as="contact_country">
-                                        <option t-att-value="contact_country.id">
-                                            <t t-esc="contact_country.name"/>
-                                    </option>
-                                </t>
-                            </select>
-                            <br/>
-                            <b>Phone number: </b><input type="text" class="form-control"
-                                   id="contact_phone" name="contact_phone"
-                                   placeholder="Contact Phone Number"
-                                   required="1"/>
-                            <br/>
-                            <b>Email: </b><input type="text" class="form-control"
-                                   id="contact_email" name="contact_email"
-                                   placeholder="Contact Email" required="1"/>
-                            <br/>
+                                </li>
+                                <li>
+                                    <b>Address: </b><input type="text" class="form-control"
+                                    id="contact_street" name="contact_street"
+                                    placeholder="Contact Address" required="1"/>
+                                </li>
+                                <li>
+                                    <b>City: </b><input type="text" class="form-control"
+                                    id="contact_city" name="contact_city"
+                                    placeholder="Contact City" required="1"/>
+                                </li>
+                                <li>
+                                    <b>Country: </b><select id="contact_country" name="contact_country"
+                                            class="form-control" required="1" placeholder="Contact Country">
+                                        <option value="" selected="1"></option>
+                                            <t t-foreach="contact_country_ids"
+                                                t-as="contact_country">
+                                                <option t-att-value="contact_country.id">
+                                                    <t t-esc="contact_country.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </li>
+                                <li>
+                                    <b>Phone number: </b><input type="text" class="form-control"
+                                           id="contact_phone" name="contact_phone"
+                                           placeholder="Contact Phone Number"
+                                           required="1"/>
+                                </li>
+                                <li>
+                                    <b>Email: </b><input type="text" class="form-control"
+                                           id="contact_email" name="contact_email"
+                                           placeholder="Contact Email" required="1"/>
+                                </li>
+                            </ul>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary" name="button_submit">Save Contact</button>
                             </div>
