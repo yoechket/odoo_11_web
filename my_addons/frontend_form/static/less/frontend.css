@@ -1,6 +1,6 @@
 .navbar{
     background-color:white;
-    border:none;
+    border-bottom:none;
 }
 
 .col-md-1, .col-md-2{
@@ -16,4 +16,20 @@
 
 #menu_title:hover{
     background-color:transparent;
+}
+
+.dialog-list{
+    list-style-type:none;
+    margin-right:35px;
+}
+#top_menu li.active a{
+    background-color:#bfbfbf!important;
+    color:white;
+    border:none;
+}
+
+.o_main_navbar{
+    background-color:#bfbfbf!important;
+    color:white;
+    border:none;
 }
