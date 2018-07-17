@@ -6,8 +6,23 @@
               inherit_id="website.homepage"
               name="Homepage Extension">
             <xpath expr="//div[@id='wrap']" position="inside">
-                <h1>Test</h1>
-                <button id="toggle">Toggle text</button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-3">
+                            <div class="col-md-8">
+                                <h1 style="text-align:center;">
+                                    Sweet Home Alabama
+                                </h1>
+                                <iframe width="560"
+                                        height="315"
+                                        src="https://www.youtube.com/embed/ye5BuYf8q4o"
+                                        frameborder="0"
+                                        allow="autoplay; encrypted-media"
+                                        allowfullscreen="True"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </xpath>
         </template>
 

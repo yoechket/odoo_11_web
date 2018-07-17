@@ -20,7 +20,7 @@
              'report/contact_group_report.xml',
              'security/ir.model.access.csv',
              'views/add_contact_templates.xml',
-             #'views/home_page.xml',
+             'views/home_page.xml',
              'views/assets.xml',
              'views/contact_extension.xml',
              'views/contact_group.xml',
