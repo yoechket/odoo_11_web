@@ -7,10 +7,10 @@ import werkzeug
 class contact_group(http.Controller):
 
     @http.route("/group/<int:group_id>/<token>", type='http', auth='user', website=True)
-    def view_group(self, group_id, token=None, pdf=None, **post):
-        if token:
-            self.contact_country_ids = request.env['res.country'].sudo().search([])
-            Group = request.env['res.partner.group'].sudo().search([('id', '=', group_id), ('access_token', '=', token)])
+    def view_group(self, group_id=None, token=None, pdf=None, **post):
+        self.contact_country_ids = request.env['res.country'].sudo().search([])
+        Group = request.env['res.partner.group'].sudo().search([('id', '=', group_id), ('access_token', '=', token)])
+        if Group:
             self.group_sudo = Group.sudo()
             contacts = request.env['res.partner'].sudo().search([('group_id', '=', False)])
             values = {'group': self.group_sudo,
@@ -24,6 +24,9 @@ class contact_group(http.Controller):
                 pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf))]
                 return request.make_response(pdf, headers=pdfhttpheaders)
             return request.render('frontend_form.contact_group', values)
+        else:
+            return request.render('website.404')
+
 
     @http.route("/contact_group/create_contact",
                 type='http',
@@ -62,12 +65,14 @@ class contact_group(http.Controller):
     @http.route(['/group/update_rank'], type='json', auth="user", website=True)
     def update(self, increase=False, group_id=None, token=None, **post):
         Group = request.env['res.partner.group'].sudo().browse(int(group_id))
+        valid = True
         if token != Group.access_token:
             return request.render('website.404')
         if increase and Group.rank > 1:
             number = -1
         elif increase and Group.rank == 1:
             number = 0
+            valid = False
         elif not increase:
             number = 1
         new_rank = Group.rank + number

@@ -40,7 +40,13 @@ odoo.define('frontend_form.dyn_menu', function (require) {
                 if(!data){
                     window.location.reload();
                 }
-                self.$el.parents('.input-group:first').find('.js_rank').val(data[0]);
+                var rank_value = $(document).find(".js_rank").val();
+                if(self.$el.children('span').attr('class') === 'fa fa-plus' && rank_value == 1){
+                    alert('Max Rank Reached!');
+                }
+                else{
+                    self.$el.parents('.input-group:first').find('.js_rank').val(data[0]);
+                }
             });
             return false;
         },

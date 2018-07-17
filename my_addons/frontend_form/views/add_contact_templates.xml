@@ -170,9 +170,17 @@
               customize_show="True"
               name="Pop-up Form">
         <xpath expr="//div[@class='container']" position="replace">
-            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalform">
-            <i class="fa fa-address-card"></i> Add Contact
-            </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <a class="btn btn-block" data-toggle="modal" data-target="#modalform">
+                            <i class="fa fa-address-card"></i> Add Contact
+                        </a>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
             <div class="modal fade" id="modalform" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <form t-attf-action="/add_contact/create_contact_modal" method="POST" id="modal_contact_form" class="modal-content">

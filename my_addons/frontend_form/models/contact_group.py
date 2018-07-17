@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api
+from odoo.exceptions import UserError
 import uuid
 
 
@@ -24,3 +25,8 @@ class contactGroup(models.Model):
             'target': 'self',
             'url': '/group/%s/%s' % (self.id, self.access_token)
         }
+
+    @api.constrains('rank')
+    def _check_rank(self):
+        if self.rank < 1:
+            raise UserError('Rank needs to be a positive number!')
