@@ -21,6 +21,7 @@
 .dialog-list{
     list-style-type:none;
     margin-right:35px;
+<<<<<<< HEAD
 }
 #top_menu li.active a{
     background-color:#bfbfbf!important;
@@ -32,4 +33,6 @@
     background-color:#bfbfbf!important;
     color:white;
     border:none;
+=======
+>>>>>>> 44ebea3... [UPD]
 }

@@ -110,6 +110,7 @@
                                 Add New Contact
                             </h1>
                         </a>
+                        <!--Modal Form-->
                         <div class="modal fade hidden-print" id="modalform" role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
                                 <form t-attf-action="/contact_group/create_contact" method="POST" id="new_contact_form" class="modal-content">
