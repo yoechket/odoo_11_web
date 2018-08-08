@@ -7,6 +7,7 @@
     'summary': "Sandbox for frontend forms",
 
     'depends': ['website',
+                'portal',
                 'contacts',
                 'smile_menu_icon_10',
                 'calendar',
@@ -24,6 +25,7 @@
              'views/assets.xml',
              'views/contact_extension.xml',
              'views/contact_group.xml',
-             'views/contact_group_template.xml'
+             'views/contact_group_template.xml',
+             'views/website_layout.xml',
              ],
 }
