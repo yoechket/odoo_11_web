@@ -52,6 +52,7 @@ odoo.define('frontend_form.fancybox_snippet', function (require) {
                     $('<a/>', {
                         class: 'truesize_img',
                         href: attachments[i].src,
+                        'data-fancybox': 'gallery',
                         'data-index': ++index,
                     }).append($('<img/>', {
                                 class: 'thumbnail_group',
