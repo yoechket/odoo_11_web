@@ -27,5 +27,6 @@
              'views/contact_group.xml',
              'views/contact_group_template.xml',
              'views/website_layout.xml',
+             'views/fancybox_snippet.xml',
              ],
 }

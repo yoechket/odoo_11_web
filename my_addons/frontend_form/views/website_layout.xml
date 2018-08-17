@@ -3,9 +3,13 @@
     <data>
 
         <template id="header_extension" inherit_id="portal.frontend_layout" name="Header Extension">
-            <div class="navbar navbar-default navbar-static-top" position="before">
-                <h1>TEST</h1>
+            <div class="navbar navbar-default navbar-static-top" position="attributes">
+                <attribute name="class">top-custom-navbar</attribute>
             </div>
+            <ul class="nav navbar-nav navbar-right" position="attributes">
+                <attribute name="class">navbar-right right-custom-navbar</attribute>
+            </ul>
+            <!--<xpath expr="//ul[@class='navbar-right right-custom-navbar']/li[@class='divider']" position="replace"></xpath>-->
         </template>
 
     </data>

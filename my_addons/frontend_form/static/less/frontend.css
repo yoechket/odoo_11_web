@@ -1,10 +1,10 @@
-.navbar{
-    background-color:white;
-    border-bottom:none;
-}
-
 .col-md-1, .col-md-2{
     word-wrap:break-word;
+}
+
+body{
+    background:#404040;
+    color:white;
 }
 
 .bs-sidebar{
@@ -22,14 +22,78 @@
     list-style-type:none;
     margin-right:35px;
 }
-#top_menu li.active a{
+
+/*.o_main_navbar{
     background-color:#bfbfbf!important;
     color:white;
     border:none;
+}*/
+
+#textboxelement{
+    background-color:#a6a6a6;
+    color:white;
+    text-align:center;
+    box-shadow: 1px 2px 5px 10px grey ;
 }
 
-.o_main_navbar{
-    background-color:#bfbfbf!important;
+.right-custom-navbar{
+    background:#404040;
+    list-style-type:none;
+    padding:5px;
+    border:1px solid grey
+    overflow:hidden;
+}
+
+.right-custom-navbar li{
+    border-bottom:1px solid grey;
+    float:left;
+    padding:5px;
+}
+
+.right-custom-navbar li a{
     color:white;
-    border:none;
+    display:block;
+    text-align:center;
+    font-size:120%;
+}
+
+.right-custom-navbar li a:hover{
+    color:white;
+    display:block;
+    text-align:center;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.right-custom-navbar li.active a{
+    background-color:#404040!important;
+    color:grey;
+}
+
+.js_usermenu{
+    background-color:#404040;
+    color:white;
+    text-align:center;
+}
+
+.js_usermenu li{
+    margin-left:15px;
+    border-bottom:none;
+}
+
+.js_usermenu li a:hover{
+    background-color:#404040;
+    color:white;
+}
+
+.right-custom-navbar li.divider{
+    display:none;
+}
+
+.modal-content{
+    background-color:#404040;
+}
+
+footer{
+    background-color:#404040;
 }
